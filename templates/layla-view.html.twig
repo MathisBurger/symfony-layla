@@ -16,9 +16,219 @@
     let IDs = [
         {
             id: "line-1",
-            minDiff: 0,
-            maxDiff: 1000
-        }
+            minDiff: 20600,
+            maxDiff: 24000
+        },
+        {
+            id: "line-2",
+            minDiff: 24000,
+            maxDiff: 27300
+        },
+        {
+            id: "line-3",
+            minDiff: 27300,
+            maxDiff: 30800
+        },
+        {
+            id: "line-4",
+            minDiff: 30800,
+            maxDiff: 34300
+        },
+        {
+            id: "line-5",
+            minDiff: 34800,
+            maxDiff: 37600
+        },
+        {
+            id: "line-6",
+            minDiff: 37600,
+            maxDiff: 41000
+        },
+        {
+            id: "line-7",
+            minDiff: 41000,
+            maxDiff: 44450
+        },
+        {
+            id: "line-8",
+            minDiff: 44450,
+            maxDiff: 49000
+        },
+        {
+            id: "line-9",
+            minDiff: 54500,
+            maxDiff: 59550
+        },
+        {
+            id: "line-10",
+            minDiff: 59550,
+            maxDiff: 62950
+        },
+        {
+            id: "line-11",
+            minDiff: 62950,
+            maxDiff: 66450
+        },
+        {
+            id: "line-12",
+            minDiff: 66450,
+            maxDiff: 67750
+        },
+        {
+            id: "line-13",
+            minDiff: 67750,
+            maxDiff: 69850
+        },
+        {
+            id: "line-14",
+            minDiff: 69850,
+            maxDiff: 73300
+        },
+        {
+            id: "line-15",
+            minDiff: 73300,
+            maxDiff: 76550
+        },
+        {
+            id: "line-16",
+            minDiff: 76650,
+            maxDiff: 80000
+        },
+        {
+            id: "line-17",
+            minDiff: 80000,
+            maxDiff: 83000
+        },
+        {
+            id: "line-18",
+            minDiff: 84600,
+            maxDiff: 87450
+        },
+        {
+            id: "line-19",
+            minDiff: 87450,
+            maxDiff: 90800
+        },
+        {
+            id: "line-20",
+            minDiff: 90800,
+            maxDiff: 94000
+        },
+        {
+            id: "line-21",
+            minDiff: 94000,
+            maxDiff: 97700
+        },
+        {
+            id: "line-22",
+            minDiff: 104200,
+            maxDiff: 109300
+        },
+        {
+            id: "line-23",
+            minDiff: 109300,
+            maxDiff: 112650
+        },
+        {
+            id: "line-24",
+            minDiff: 112650,
+            maxDiff: 116000
+        },
+        {
+            id: "line-25",
+            minDiff: 116000,
+            maxDiff: 117300
+        },
+        {
+            id: "line-26",
+            minDiff: 117300,
+            maxDiff: 119500
+        },
+        {
+            id: "line-27",
+            minDiff: 119500,
+            maxDiff: 122850
+        },
+        {
+            id: "line-28",
+            minDiff: 122850,
+            maxDiff: 126350
+        },
+        {
+            id: "line-29",
+            minDiff: 126350,
+            maxDiff: 129750
+        },
+        {
+            id: "line-30",
+            minDiff: 129750,
+            maxDiff: 132500
+        },
+        {
+            id: "line-31",
+            minDiff: 132500,
+            maxDiff: 135600
+        },
+        {
+            id: "line-32",
+            minDiff: 135600,
+            maxDiff: 138950
+        },
+        {
+            id: "line-33",
+            minDiff: 138950,
+            maxDiff: 142450
+        },
+        {
+            id: "line-34",
+            minDiff: 142450,
+            maxDiff: 145800
+        },
+        {
+            id: "line-35",
+            minDiff: 152200,
+            maxDiff: 157150
+        },
+        {
+            id: "line-36",
+            minDiff: 157150,
+            maxDiff: 160650
+        },
+        {
+            id: "line-37",
+            minDiff: 160650,
+            maxDiff: 164000
+        },
+        {
+            id: "line-38",
+            minDiff: 164000,
+            maxDiff: 165500
+        },
+        {
+            id: "line-39",
+            minDiff: 165500,
+            maxDiff: 167450
+        },
+        {
+            id: "line-40",
+            minDiff: 167450,
+            maxDiff: 171000
+        },
+        {
+            id: "line-41",
+            minDiff: 171000,
+            maxDiff: 174450
+        },
+        {
+            id: "line-42",
+            minDiff: 174450,
+            maxDiff: 177900
+        },
+        {
+            id: "line-43",
+            minDiff: 177900,
+            maxDiff: 181100
+        },
     ]
 
     function getTimeDifference() {
@@ -26,8 +236,9 @@
     }
 
     function setH1Style(minDiff, maxDiff, id) {
-        if (minDiff <= getTimeDifference() <= maxDiff) {
-            document.getElementById(id).style.color = "yellow";
+        let diff = getTimeDifference();
+        if (minDiff < diff && diff <= maxDiff) {
+            document.getElementById(id).style.color = "blue";
         } else {
             document.getElementById(id).style.color = "black";
         }
@@ -40,6 +251,7 @@
             startedTime = new Date().getTime();
             clicked = true;
             setInterval(() => {
+                console.log(getTimeDifference());
                 IDs.forEach(({id, maxDiff, minDiff}) => {
                     setH1Style(minDiff, maxDiff, id);
                 });
@@ -47,52 +259,49 @@
         }
     })
 </script>
-<h1 style="color: red; font-size: 3em">KLICKE UM LAYLA ZU HÖREN</h1>
+<h1 style="color: red; font-size: 3em;">KLICKE UM LAYLA ZU HÖREN</h1>
 <h1 id="line-1">Neulich in der Stadt stand da ein Mann</h1>
-<h1>Er schaute mich sehr glücklich an</h1>
-<h1>
-    <br>
-    „Hey, komm mal her“, sagte er zu mir<br>
-    „Das ist mein Laden, mein Revier“<br>
-    „Mein Junge, ich hab' ein Geheimnis für dich“<br>
-    Was er von mir wollte, wusste ich nicht<br>
-    Ich sah nur das Grinsen in seinem Gesicht<br>
-    „Was ich dir sage, glaubst du mir nicht“<br>
-    Ich hab' 'nen Puff und meine Puffmama heißt Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la<br>
-    Die wunderschöne Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la, die wunderschöne Layla<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la, la-la-la-la-la-la<br>
-    Dann war es auch um mich geschehen<br>
-    Das wollte ich aus der Nähe sehen<br>
-    Ich ging in den Laden und schon stand sie da<br>
-    Geile Figur, blondes Haar<br>
-    Er hat 'nen Puff und seine Puffmama heißt Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la<br>
-    Die wunderschöne Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la, die wunderschöne Layla<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la, la-la-la-la-la-la<br>
-    Die schöne Layla, die geile Layla<br>
-    Das Luder Layla, unsre Layla<br>
-    Die schöne Layla, die geile Layla<br>
-    Das Luder Layla, unsre Layla<br>
-    Wir lieben dich, la-la-la-la-la-la-la-Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la<br>
-    Die wunderschöne Layla<br>
-    Sie ist schöner, jünger, geiler<br>
-    La-la-la-la, die wunderschöne Layla<br>
-    La-la-la-la-la-la-la-Layla<br>
-    La-la-la-la, la-la-la-la-la-la<br>
-</h1>
+<h1 id="line-2">Er schaute mich sehr glücklich an</h1>
+<h1 id="line-3">„Hey, komm mal her“, sagte er zu mir</h1>
+<h1 id="line-4">„Das ist mein Laden, mein Revier“</h1>
+<h1 id="line-5">„Mein Junge, ich hab' ein Geheimnis für dich“</h1>
+<h1 id="line-6">Was er von mir wollte, wusste ich nicht</h1>
+<h1 id="line-7">Ich sah nur das Grinsen in seinem Gesicht</h1>
+<h1 id="line-8">„Was ich dir sage, glaubst du mir nicht“</h1>
+<h1 id="line-9">Ich hab' 'nen Puff und meine Puffmama heißt Layla</h1>
+<h1 id="line-10">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-11">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-12">La-la-la-la</h1>
+<h1 id="line-13">Die wunderschöne Layla</h1>
+<h1 id="line-14">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-15">La-la-la-la, die wunderschöne Layla</h1>
+<h1 id="line-16">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-17">La-la-la-la, la-la-la-la-la-la</h1>
+<h1 id="line-18">Dann war es auch um mich geschehen</h1>
+<h1 id="line-19">Das wollte ich aus der Nähe sehen</h1>
+<h1 id="line-20">Ich ging in den Laden und schon stand sie da</h1>
+<h1 id="line-21">Geile Figur, blondes Haar</h1>
+<h1 id="line-22">Er hat 'nen Puff und seine Puffmama heißt Layla</h1>
+<h1 id="line-23">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-24">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-25">La-la-la-la</h1>
+<h1 id="line-26">Die wunderschöne Layla</h1>
+<h1 id="line-27">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-28">La-la-la-la, die wunderschöne Layla</h1>
+<h1 id="line-29">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-30">La-la-la-la, la-la-la-la-la-la</h1>
+<h1 id="line-31">Die schöne Layla, die geile Layla</h1>
+<h1 id="line-32">Das Luder Layla, unsre Layla</h1>
+<h1 id="line-33">Die schöne Layla, die geile Layla</h1>
+<h1 id="line-34">Das Luder Layla, unsre Layla</h1>
+<h1 id="line-35">Wir lieben dich, la-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-36">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-37">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-38">La-la-la-la</h1>
+<h1 id="line-39">Die wunderschöne Layla</h1>
+<h1 id="line-40">Sie ist schöner, jünger, geiler</h1>
+<h1 id="line-41">La-la-la-la, die wunderschöne Layla</h1>
+<h1 id="line-42">La-la-la-la-la-la-la-Layla</h1>
+<h1 id="line-43">La-la-la-la, la-la-la-la-la-la</h1>
 </body>
 </html>
