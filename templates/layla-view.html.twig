@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LAYLA! LA-LA-LA-LA-LA-LA-LA-LAYLA</title>
+    <style>
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var startedTime = null;
+    var clicked = false;
+    let IDs = [
+        {
+            id: "line-1",
+            minDiff: 0,
+            maxDiff: 1000
+        }
+    ]
+
+    function getTimeDifference() {
+        return new Date().getTime() - startedTime;
+    }
+
+    function setH1Style(minDiff, maxDiff, id) {
+        if (minDiff <= getTimeDifference() <= maxDiff) {
+            document.getElementById(id).style.color = "yellow";
+        } else {
+            document.getElementById(id).style.color = "black";
+        }
+    }
+
+    document.addEventListener("click", () => {
+        if (!clicked) {
+            let audio = new Audio("/bundles/layla/layla.mp3");
+            audio.play();
+            startedTime = new Date().getTime();
+            clicked = true;
+            setInterval(() => {
+                IDs.forEach(({id, maxDiff, minDiff}) => {
+                    setH1Style(minDiff, maxDiff, id);
+                });
+            }, 50);
+        }
+    })
+</script>
+<h1 style="color: red; font-size: 3em">KLICKE UM LAYLA ZU HÖREN</h1>
+<h1 id="line-1">Neulich in der Stadt stand da ein Mann</h1>
+<h1>Er schaute mich sehr glücklich an</h1>
+<h1>
+    <br>
+    „Hey, komm mal her“, sagte er zu mir<br>
+    „Das ist mein Laden, mein Revier“<br>
+    „Mein Junge, ich hab' ein Geheimnis für dich“<br>
+    Was er von mir wollte, wusste ich nicht<br>
+    Ich sah nur das Grinsen in seinem Gesicht<br>
+    „Was ich dir sage, glaubst du mir nicht“<br>
+    Ich hab' 'nen Puff und meine Puffmama heißt Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la<br>
+    Die wunderschöne Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la, die wunderschöne Layla<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la, la-la-la-la-la-la<br>
+    Dann war es auch um mich geschehen<br>
+    Das wollte ich aus der Nähe sehen<br>
+    Ich ging in den Laden und schon stand sie da<br>
+    Geile Figur, blondes Haar<br>
+    Er hat 'nen Puff und seine Puffmama heißt Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la<br>
+    Die wunderschöne Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la, die wunderschöne Layla<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la, la-la-la-la-la-la<br>
+    Die schöne Layla, die geile Layla<br>
+    Das Luder Layla, unsre Layla<br>
+    Die schöne Layla, die geile Layla<br>
+    Das Luder Layla, unsre Layla<br>
+    Wir lieben dich, la-la-la-la-la-la-la-Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la<br>
+    Die wunderschöne Layla<br>
+    Sie ist schöner, jünger, geiler<br>
+    La-la-la-la, die wunderschöne Layla<br>
+    La-la-la-la-la-la-la-Layla<br>
+    La-la-la-la, la-la-la-la-la-la<br>
+</h1>
+</body>
+</html>

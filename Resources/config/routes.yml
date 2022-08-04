@@ -1,0 +1,4 @@
+layla:
+  path: /layla
+  controller: MathisBurger\SymfonyLayla\Controller\LaylaController::playLayla
+  methods: GET

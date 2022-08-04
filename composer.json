@@ -1,0 +1,22 @@
+{
+  "name": "mathisburger/symfony-layla",
+  "description": "A bundle that plays the layla song on a specific rest route",
+  "type": "symfony-bundle",
+  "require": {
+    "php": "^7.3 || 8.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "3.4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MathisBurger\\SymfonyLayla\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Mathis Burger",
+      "email": "mburger@die-netzwerkstatt.de"
+    }
+  ]
+}
